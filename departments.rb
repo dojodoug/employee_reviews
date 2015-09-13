@@ -1,5 +1,5 @@
 class Departments
-  attr_reader :name
+  attr_accessor :name, :dept_name
 
   def initialize(dept_name)
       @dept_name = dept_name

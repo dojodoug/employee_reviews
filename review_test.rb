@@ -34,4 +34,9 @@ class ReviewTest < Minitest::Test
     assert dept.get_employee_salary == 50000
   end
 
+  def test_get_dept_name
+    dept = Departments.new("R&D")
+    assert_equal "R&D", dept.dept_name
+  end
+
 end
