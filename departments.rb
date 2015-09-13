@@ -15,8 +15,15 @@ class Departments
   end
 
   def get_employee_name
-    @employees.each do |getname|
-      return getname.name
+    @employees.each do |i|
+      return i.name
+    end
+    false
+  end
+
+  def get_employee_salary
+    @employees.each do |i|
+      return i.salary
     end
     false
   end

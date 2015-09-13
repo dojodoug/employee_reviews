@@ -28,5 +28,10 @@ class ReviewTest < Minitest::Test
     assert dept.get_employee_name == "Elliot"
   end
 
+  def test_get_employee_salary
+    dept = Departments.new("IT")
+    dept.add_employee("Elliot", "elliot@mrrobot.com", "919-444-777", 50000)
+    assert dept.get_employee_salary == 50000
+  end
 
 end
