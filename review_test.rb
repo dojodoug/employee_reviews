@@ -12,5 +12,8 @@ class ReviewTest < Minitest::Test
     assert Departments.new(name)
   end
 
+  def test_new_employee
+    assert Employee.new(name: nil, email: nil, phone: nil, salary: nil)
+  end
 
 end

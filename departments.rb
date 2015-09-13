@@ -1,8 +1,8 @@
 class Departments
-  attr_reader :name
+  #attr_reader :name
 
-  def initialize(name)
-      @dept_name = name
+  def initialize(dept_name = "HR")
+      @dept_name = dept_name
   end
 
 
