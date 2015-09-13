@@ -1,13 +1,27 @@
 class Employee
+attr_reader :name, :email, :phone, :salary
 
-  def initialize(name: "Tyrell",
-                 email: "tyrell@evilcorp.com",
-                 phone: "919-555-8888",
-                 salary: "$50,000")
+  def initialize(name, email, phone, salary)
     @name = name
     @email = email
     @phone = phone
     @salary = salary
+  end
+
+  def name
+    @name
+  end
+
+  def email
+    @email
+  end
+
+  def phone
+    @phone
+  end
+
+  def salary
+    @salary
   end
 
 end

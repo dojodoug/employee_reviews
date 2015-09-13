@@ -1,6 +1,7 @@
 require 'minitest/autorun'
 require 'minitest/pride'
 require './employee_review.rb'
+require './departments.rb'
 
 class ReviewTest < Minitest::Test
 
@@ -9,11 +10,23 @@ class ReviewTest < Minitest::Test
   end
 
   def test_initialize
-    assert Departments.new(name)
+    assert Departments.new("Executive")
   end
 
-  def test_new_employee
-    assert Employee.new(name: nil, email: nil, phone: nil, salary: nil)
+  def test_create_new_employee
+    assert Employee.new("Tyrell", "tyrell@evilcorp.com", "919-555-8888", 150000)
   end
+
+  def test_add_employee_to_dept
+    dept = Departments.new("IT")
+    assert dept.add_employee("Elliot", "elliot@mrrobot.com", "919-444-777", 50000)
+  end
+
+  def test_get_employee_name
+    dept = Departments.new("IT")
+    dept.add_employee("Elliot", "elliot@mrrobot.com", "919-444-777", 50000)
+    assert dept.get_employee_name == "Elliot"
+  end
+
 
 end
