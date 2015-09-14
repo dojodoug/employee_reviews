@@ -9,37 +9,37 @@ class ReviewTest < Minitest::Test
     :alpha
   end
 
-  def test_initialize
+  def test_initialize_01
     assert Departments.new("Executive")
   end
 
-  def test_create_new_employee
+  def test_create_new_employee_02
     assert Employee.new("Tyrell", "tyrell@evilcorp.com", "919-555-8888", 150000)
   end
 
-  def test_add_employee_to_dept
+  def test_add_employee_to_dept_03
     dept = Departments.new("IT")
     assert dept.add_employee("Elliot", "elliot@mrrobot.com", "919-444-777", 50000)
   end
 
-  def test_get_employee_name
+  def test_get_employee_name_04
     dept = Departments.new("IT")
     dept.add_employee("Elliot", "elliot@mrrobot.com", "919-444-777", 50000)
     assert dept.get_employee_name == "Elliot"
   end
 
-  def test_get_employee_salary
+  def test_get_employee_salary_05
     dept = Departments.new("IT")
     dept.add_employee("Elliot", "elliot@mrrobot.com", "919-444-777", 50000)
     assert dept.get_employee_salary == 50000
   end
 
-  def test_get_dept_name
+  def test_get_dept_name_06
     dept = Departments.new("R&D")
     assert_equal "R&D", dept.dept_name
   end
 
-  def test_total_salary_for_dept
+  def test_total_salary_for_dept_07
     dept = Departments.new("HR")
     dept.add_employee("Elliot", "elliot@mrrobot.com", "919-999-1111", 50000)
     dept.add_employee("Darlene", "darlene@mrrobot.com", "919-222-3333", 150000)
@@ -54,6 +54,15 @@ class ReviewTest < Minitest::Test
     Second, when discussing new requirements with project managers, less of the information is retained by Angela long-term than is expected.  This has a few negative consequences: 1) time is spent developing features that are not useful and need to be re-run, 2) bugs are introduced in the code and not caught because the tests lack the same information, and 3) clients are told that certain features are complete when they are inadequate.  This communication limitation could be the fault of project management, but given that other developers appear to retain more information, this is worth discussing further.
     "
     assert employee.review << review
+  end
+
+  def test_employee_satisfactory
+    employee1 = Employee.new("Shayla", "shayla@picturesofyou.com", "919-777-7777", 90000)
+    employee1.satisfactory = true
+    employee2 = Employee.new("Tyrell", "tyrell@evilcorp.com", "919-777-888", 200000)
+    employee2.satisfactory = false
+    assert_equal employee1.satisfactory, true
+    assert_equal employee2.satisfactory, false
   end
 
 end
