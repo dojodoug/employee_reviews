@@ -28,5 +28,13 @@ class Departments
     false
   end
 
+  def total_salary_for_dept
+    total_salary = 0
+    @employees.each do |i|
+      total_salary += i.salary
+    end
+    total_salary
+  end
+
 
 end

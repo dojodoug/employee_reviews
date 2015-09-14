@@ -39,4 +39,12 @@ class ReviewTest < Minitest::Test
     assert_equal "R&D", dept.dept_name
   end
 
+  def test_total_salary_for_dept
+    dept = Departments.new("HR")
+    dept.add_employee("Elliot", "elliot@mrrobot.com", "919-999-1111", 50000)
+    dept.add_employee("Darlene", "darlene@mrrobot.com", "919-222-3333", 150000)
+    dept.add_employee("Gideon", "gideon@allsafe.com", "919-444-5555", 75000)
+    assert_equal dept.total_salary_for_dept, 275000
+  end
+
 end
