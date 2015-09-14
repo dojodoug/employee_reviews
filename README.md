@@ -16,3 +16,4 @@ The basic functions of this application keep track of employees (to include thei
 * Get a department's name.
 * Get a total salary for all employees in a department.
 * Add employee review text (a paragraph or two) to an employee.
+* Designate whether an employee's performance is satisfactory or non- satisfactory.
